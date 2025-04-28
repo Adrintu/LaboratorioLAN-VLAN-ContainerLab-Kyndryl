@@ -1,0 +1,29 @@
+!
+hostname sw3
+!
+no ip routing
+!
+!
+vlan 10
+   name VLAN_10
+vlan 20
+   name VLAN_20
+vlan 30
+   name VLAN_30
+!
+!
+interface e0/1
+   switchport mode trunk
+   switchport trunk encapsulation dot1q
+   switchport trunk allowed vlan 10,20,30
+   no shutdown
+!
+interface e0/2
+   switchport mode trunk
+   switchport trunk encapsulation dot1q
+   switchport trunk allowed vlan 10,20,30
+   no shutdown
+!
+!
+end
+write
